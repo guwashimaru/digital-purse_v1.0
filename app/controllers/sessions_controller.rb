@@ -3,8 +3,7 @@ class SessionsController < ApplicationController
     def create
         user = User.find_by(user_id: params[:session][:user_id].downcase)
         if user && user.authenticate(params[:session][:password])
-          reset_session
-          session[:user_id] = user.id
+          log_in user
           redirect_to user
         else
           flash.now[:danger] = 'Invalid user ID/password combination'
@@ -13,7 +12,7 @@ class SessionsController < ApplicationController
       end
   end
   def destroy
-      reset_session
+      log_out
       redirect_to login_url
   end
 end
