@@ -1,0 +1,34 @@
+<p id="notice"></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @expense.price %>
+</p>
+
+<p>
+  <strong>Ex in flag:</strong>
+  <%= @expense.ex_in_flag %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @expense.category %>
+</p>
+
+<p>
+  <strong>Sub category:</strong>
+  <%= @expense.sub_category %>
+</p>
+
+<p>
+  <strong>Use date:</strong>
+  <%= @expense.use_date %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @expense.memo %>
+</p>
+
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>

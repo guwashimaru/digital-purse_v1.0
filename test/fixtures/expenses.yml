@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  ex_in_flag: false
+  category: 1
+  sub_category: 1
+  use_date: 2017-10-16
+  memo: MyString
+
+two:
+  price: 1
+  ex_in_flag: false
+  category: 1
+  sub_category: 1
+  use_date: 2017-10-16
+  memo: MyString

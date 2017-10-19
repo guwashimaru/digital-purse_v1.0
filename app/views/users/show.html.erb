@@ -1,0 +1,17 @@
+<p id="notice"></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @user.user_id %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'User list', users_path %>
+<% if logged_in? %>
+  <%= link_to 'Logout', logout_path, method: :delete %>
+<% end %>
