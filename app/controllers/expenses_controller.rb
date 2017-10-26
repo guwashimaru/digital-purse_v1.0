@@ -4,11 +4,11 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all #expensesテーブル内の全レコードを取得
+    @expenses = Expense.where(ex_in_flag: "true")
     @total_price = 0
     @expenses.each do |expense|
       @total_price += expense.price
-    end  
+    end
   end
 
   # GET /expenses/1
