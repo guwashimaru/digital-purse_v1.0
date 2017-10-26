@@ -1,13 +1,14 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
-  
-  def sum_expense
-  end
 
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all
+    @expenses = Expense.all #expensesテーブル内の全レコードを取得
+    @total_price = 0
+    @expenses.each do |expense|
+      @total_price += expense.price
+    end  
   end
 
   # GET /expenses/1

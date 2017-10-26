@@ -16,8 +16,8 @@
   </thead>
 
   <tbody>
+    <strong>使った合計金額　¥<%= @total_price %></strong>
     <% @expenses.each do |expense| %>
-      <tr>
         <td><%= expense.price %></td>
         <td><%= expense.ex_in_flag %></td>
         <td><%= expense.category %></td>
