@@ -5,7 +5,8 @@ class ExpensesController < ApplicationController
   # GET /expenses.json
 
   def summary
-    @expense = Expense.where(ex_in_flag: "true")
+    @expense = Expense.use_date
+    #@expense = Expense.where(ex_in_flag: "true")
     @total_price = 0
     @expense.each do |expense|
       @total_price += expense.price
