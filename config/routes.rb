@@ -8,6 +8,7 @@ get 'expenses/all_record', to: 'expenses#all_record'
 
   resources :users
   resources :expenses
+
   get 'say/Hello'
 
   get 'say/goodbye'
