@@ -16,6 +16,7 @@
   </thead>
 
   <tbody>
+    <strong>使ったお金 ¥ <%= @total_price %></strong>
     <% @expense.each do |expense| %>
         <td><%= expense.price %></td>
         <td><%= expense.ex_in_flag %></td>
@@ -32,5 +33,5 @@
 </table>
 
 <%= link_to 'Add', new_expense_path %>
-<%= link_to 'Top', index_expense_path %>
+<%= link_to 'Top', expenses_path %>
 <%= link_to 'Logout', logout_path, method: :delete %>
