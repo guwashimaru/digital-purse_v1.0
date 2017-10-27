@@ -3,6 +3,10 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   # GET /expenses.json
+def all_record
+  @expenses = Expense.all
+end
+
   def index
     @expenses = Expense.where(ex_in_flag: "true")
     @total_price = 0

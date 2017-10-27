@@ -1,0 +1,37 @@
+<p id="notice"></p>
+
+<h1>All of the Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>金額</th>
+      <th>支出/収入</th>
+      <th>カテゴリ</th>
+      <th>サブカテゴリ</th>
+      <th>日付</th>
+      <th>Memo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expenses.each do |expense| %>
+        <td><%= expense.price %></td>
+        <td><%= expense.ex_in_flag %></td>
+        <td><%= expense.category %></td>
+        <td><%= expense.sub_category %></td>
+        <td><%= expense.use_date %></td>
+        <td><%= expense.memo %></td>
+        <td><%= link_to 'Show', expense %></td>
+        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add', new_expense_path %>
+<%= link_to 'Logout', logout_path, method: :delete %>
