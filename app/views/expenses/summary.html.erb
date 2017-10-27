@@ -1,6 +1,6 @@
 <p id="notice"></p>
 
-<h1>Digital Purse</h1>
+<h1>Summary</h1>
 
 <table>
   <thead>
@@ -16,6 +16,7 @@
   </thead>
 
   <tbody>
+    <strong>今月使ったお金 ¥ <%= @total_price %></strong>
     <% @expense.each do |expense| %>
         <td><%= expense.price %></td>
         <td><%= expense.ex_in_flag %></td>
@@ -31,8 +32,6 @@
   </tbody>
 </table>
 
-<br>
-
 <%= link_to 'Add', new_expense_path %>
-<%= link_to 'Summary', expenses_summary_path %>
+<%= link_to 'Top', expenses_path %>
 <%= link_to 'Logout', logout_path, method: :delete %>

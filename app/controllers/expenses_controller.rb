@@ -3,16 +3,19 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   # GET /expenses.json
-def all_record
-  @expenses = Expense.all
-end
 
-  def index
-    @expenses = Expense.where(ex_in_flag: "true")
+  def summary
+    @expense = Expense.use_date
+    #@expense = Expense.where(ex_in_flag: "true")
     @total_price = 0
-    @expenses.each do |expense|
+    @expense.each do |expense|
       @total_price += expense.price
     end
+  end
+
+
+  def index
+    @expense = Expense.all
   end
 
   # GET /expenses/1
