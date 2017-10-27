@@ -7,7 +7,7 @@ class ExpensesController < ApplicationController
   def summary
     @expenses = Expense.where(ex_in_flag: "true")
     @total_price = 0
-    @expenses.each do |expense|
+    @expense.each do |expense|
       @total_price += expense.price
     end
   end
