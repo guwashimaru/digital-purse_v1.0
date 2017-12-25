@@ -3,6 +3,12 @@ class ExpensesController < ApplicationController
 
   # GET /expenses
   # GET /expenses.json
+  def import
+    # fileはtmpに自動で一時保存される
+    Expense.import(params[:file])
+    redirect_to expenses_url, notice: "商品を追加しました。"
+  end
+
 
   def summary
     @expense = Expense.use_date
